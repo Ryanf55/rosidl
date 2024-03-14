@@ -26,6 +26,7 @@ include_directives = set()
 
 #include <algorithm>
 #include <utility>
+#include <limits>
 
 #include "@(include_base)__struct.hpp"
 #include "rosidl_runtime_cpp/message_initialization.hpp"
