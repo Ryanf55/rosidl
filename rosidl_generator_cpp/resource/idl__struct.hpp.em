@@ -25,9 +25,11 @@ include_directives = set()
 
 #include <algorithm>
 #include <array>
+#include <limits>
 #include <memory>
 #include <string>
 #include <vector>
+// foobar
 
 #include "rosidl_runtime_cpp/bounded_vector.hpp"
 #include "rosidl_runtime_cpp/message_initialization.hpp"
