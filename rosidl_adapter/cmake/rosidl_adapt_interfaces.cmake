@@ -53,6 +53,8 @@ function(rosidl_adapt_interfaces idl_var arguments_file)
   if(ARG_ALLOW_LEGACY_FIELD_NAMES)
     list(APPEND cmd --allow-legacy-field-naming)
     MESSAGE(WARNING Allowing legacy arguments.)
+  else()
+    # MESSAGE(FATAL_ERROR "rosidl_adapt no legacy")
   endif()
 
   execute_process(

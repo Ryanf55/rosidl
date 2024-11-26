@@ -127,21 +127,18 @@ macro(rosidl_generate_interfaces target)
         PACKAGE_NAME "${PROJECT_NAME}"
         NON_IDL_TUPLES "${_non_idl_tuples}"
       )
-      set(_rosidl_apt_interfaces_opts)
+      set(_rosidl_adapt_interfaces_opts)
       if(_ARG_ALLOW_LEGACY_FIELD_NAMES)
-        set(_rosidl_apt_interfaces_opts ALLOW_LEGACY_FIELD_NAMES)
-        #list(APPEND _arg ALLOW_LEGACY_FIELD_NAMES)
+        set(_rosidl_adapt_interfaces_opts ALLOW_LEGACY_FIELD_NAMES)
         message(WARNING "Allowing legacy field names")
       else()
-        message(FATAL_ERROR NO Legacy field names)
+        # message(FATAL_ERROR "NO Legacy field names ${_ARG_ALLOW_LEGACY_FIELD_NAMES}")
       endif()
-
-      #${_rosidl_apt_interfaces_opts}
 
       rosidl_adapt_interfaces(
         _idl_adapter_tuples
         "${_adapter_arguments_file}"
-        ${_rosidl_apt_interfaces_opts}
+        ${_rosidl_adapt_interfaces_opts}
         TARGET ${target}
       )
     endif()
